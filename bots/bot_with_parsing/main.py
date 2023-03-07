@@ -15,6 +15,7 @@ def start(message):
     if not get_db():
         parse()
     bot.send_message(message.chat.id, 'Choose the page',reply_markup=get_keyboard())
+bot.polling()
 
 @bot.callback_query_handler(lambda x: True)
 def send_data(call):
